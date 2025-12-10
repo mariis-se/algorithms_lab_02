@@ -46,7 +46,6 @@ class BST:
     def _delete_recursive(self, node, val):
         if node is None:
             return None
-        # поиск узла для удаления
         if val < node.val:
             node.left = self._delete_recursive(node.left, val)
         elif val > node.val:
@@ -184,7 +183,6 @@ def main():
         found = bst.search(val)
         print(f"   Поиск {val:3}: {' Найден' if found else ' Не найден'}")
 
-    print(f"\n3 Минимум и максимум:")
     print(f"   Минимальное значение: {bst.find_min()}")
     print(f"   Максимальное значение: {bst.find_max()}")
 
@@ -202,14 +200,12 @@ def main():
     print("Удалили лист 10")
     print(f"Inorder после удаления: {bst.inorder()}")
 
-    #  узел с одним потомком
     bst.delete(20)
     print("\nУдалили узел 20 (имел одного потомка)")
     print(f"Inorder после удаления: {bst.inorder()}")
 
-    # Удаляем узел с двумя потомками (корень)
     bst.delete(50)
-    print("\nУдалили корень 50 (имел двух потомков)")
+    print("\nУдалили узел 50 (имел двух потомков)")
     print(f"Inorder после удаления: {bst.inorder()}")
 
     print("\n6 Проверка:")
